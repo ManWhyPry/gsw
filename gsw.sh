@@ -106,7 +106,14 @@ case "$1" in
 				then
 					git remote add origin $3
 					git branch -M main
-					git push -u origin main
+					git push -u origin main --hard
+					exit 0
+				fi
+				;;
+			remote)
+				if [ -n "$3" ]
+				then
+					git clone "$3" .
 					exit 0
 				fi
 				;;
