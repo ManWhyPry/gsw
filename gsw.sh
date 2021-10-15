@@ -112,6 +112,10 @@ case "$1" in
 				;;
 		esac
 		;;
+	prod!)
+		git push
+		exit 0
+		;;
 esac
 
 echo Wrong usage
