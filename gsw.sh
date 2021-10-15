@@ -99,6 +99,19 @@ case "$1" in
 		git reset --hard
 		git clean -fd
 		;;
+	connect)
+		case $2 in
+			erase!)
+				if [ -n "$3" ]
+				then
+					git remote add origin $3
+					git branch -M main
+					git push -u origin main
+					exit 0
+				fi
+				;;
+		esac
+		;;
 esac
 
 echo Wrong usage
